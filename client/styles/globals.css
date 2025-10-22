@@ -19,7 +19,6 @@
   --header-height: 64px;
   --footer-height: 48px;
   --chat-header-height: 72px;
-  /* --screen-height: 759px; */
   --screen-height: calc(100vh - var(--header-height));
   --screen-width: calc(100vw - 3rem);
   --aside-width: 257px;

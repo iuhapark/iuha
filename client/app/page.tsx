@@ -9,7 +9,7 @@ export default function Home() {
     <div className='flex flex-col items-center justify-center relative'>
       <div
         className='fixed inset-0 z-0 w-full h-full bg-no-repeat bg-cover bg-center opacity-70'
-        style={{ backgroundImage: "url('/assets/img/home/main.jpeg')" }}
+        // style={{ backgroundImage: "url('/assets/img/home/main.jpeg')" }}
       />
       <div className='relative z-10 w-full flex flex-col items-center justify-center'>
         <Landing />

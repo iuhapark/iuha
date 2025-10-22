@@ -50,7 +50,7 @@ const Navbar = async () => {
   );
 
   return (
-    <HeroUINavbar maxWidth='full' position='sticky'>
+    <HeroUINavbar maxWidth='full' position='sticky' className='bg-transparent'>
       <NavbarContent className='basis-1/5 sm:basis-full' justify='start'>
         <NavbarBrand as='li' className='gap-3 max-w-fit'>
           <NextLink className='flex justify-start items-center gap-1' href='/'>
@@ -65,14 +65,6 @@ const Navbar = async () => {
         className='hidden sm:flex basis-1/5 sm:basis-full'
         justify='end'
       >
-        <NavbarItem>
-          <Link
-            color='foreground'
-            href={siteConfig.navItems.find(i => i.label === 'Chat')?.href}
-          >
-            Chat
-          </Link>
-        </NavbarItem>
         <NavbarItem>
           <Link
             isExternal

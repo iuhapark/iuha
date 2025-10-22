@@ -29,7 +29,7 @@ export default function Landing() {
               buttonStyles({
                 color: 'primary',
                 radius: 'full',
-                variant: 'shadow',
+                variant: 'solid',
                 size: 'lg',
               }),
               'w-full md:w-auto',

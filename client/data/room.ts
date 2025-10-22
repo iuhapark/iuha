@@ -1,4 +1,3 @@
-// /data/rooms.ts
 import { ChatRoom } from '@/types';
 import USERS from './user';
 
