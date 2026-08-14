@@ -3,7 +3,7 @@ COPY --chown=gradle:gradle . /gradle
 WORKDIR /gradle
 RUN ./gradlew :server:bootJar -x test
 
-FROM openjdk:17-alpine
+FROM eclipse-temurin:17-jre-alpine
 RUN mkdir /app
 COPY --from=builder /gradle/server/build/libs/*.jar /app/app.jar
 COPY server/src/main/resources/application.yml /app/application.yml
