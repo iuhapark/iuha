@@ -24,6 +24,7 @@ const TextArea = ({ id, participants, lastMessage, onRefresh, isLocal = false }:
     const data: Message = {
       roomId: id,
       sender: { id: user?.id, name: user?.name, profile: user?.profile } as User,
+      receiver: participants.find(p => p.id !== user?.id)?.id,
       message: trimmed,
     };
 

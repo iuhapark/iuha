@@ -32,6 +32,7 @@ public class Message {
 
     private String message;
     private LocalDateTime timestamp;
+    private boolean isRead = false;
 
     public enum MessageType {
         ENTER, TALK, LEAVE

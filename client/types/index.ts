@@ -27,6 +27,7 @@ export interface Message {
   id?: string;
   roomId?: string;
   sender?: User;
+  receiver?: string;
   message: string;
   timestamp?: string;
   type?: string;

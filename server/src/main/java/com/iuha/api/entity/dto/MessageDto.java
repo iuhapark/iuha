@@ -17,18 +17,22 @@ public class MessageDto {
     private String id;
     private String roomId;
     private UserDto sender;
+    private String receiver;
     private Message.MessageType type;
     private String message;
     private LocalDateTime timestamp;
+    private boolean isRead = false;
 
     public static MessageDto from(Message message) {
         return new MessageDto(
                 message.getId(),
                 message.getChatRoom().getId(),
                 UserDto.from(message.getSender()),
+                message.getReceiver(),
                 message.getType(),
                 message.getMessage(),
-                message.getTimestamp()
+                message.getTimestamp(),
+                message.isRead()
         );
     }
 

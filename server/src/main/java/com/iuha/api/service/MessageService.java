@@ -17,9 +17,11 @@ public interface MessageService {
                 .id(dto.getId())
                 .chatRoom(ChatRoom.builder().id(dto.getRoomId()).build())
                 .sender(User.builder().id(dto.getId()).build())
+                .receiver(dto.getReceiver())
                 .type(dto.getType())
                 .message(dto.getMessage())
                 .timestamp(LocalDateTime.now())
+                .isRead(dto.isRead())
                 .build();
     }
 
@@ -33,9 +35,11 @@ public interface MessageService {
                         .username(message.getSender().getUsername())
                         .profile(message.getSender().getProfile())
                         .build())
+                .receiver(message.getReceiver())
                 .type(message.getType())
                 .message(message.getMessage())
                 .timestamp(message.getTimestamp())
+                .isRead(message.isRead())
                 .build();
     }
 

@@ -37,7 +37,6 @@ export default async function RootLayout({
   const user = await fetchSessionUser();
   return (
     <html suppressHydrationWarning lang='en'>
-      <head />
       <body
         className={clsx(
           'min-h-screen text-foreground bg-background font-sans antialiased',

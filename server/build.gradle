@@ -83,7 +83,7 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-data-redis'
 
     /* mysql */
-    runtimeOnly 'com.mysql:mysql-connector-j'
+    implementation 'com.mysql:mysql-connector-j:8.4.0'
 
     /* messaging */
     implementation 'org.springframework.boot:spring-boot-starter-websocket:3.4.4'

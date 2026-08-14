@@ -37,9 +37,11 @@ public class ChatController {
                 Message.builder()
                         .chatRoom(chatRoom)
                         .sender(sender)
+                        .receiver(dto.getReceiver())
                         .type(Message.MessageType.TALK)
                         .message(dto.getMessage())
                         .timestamp(LocalDateTime.now())
+                        .isRead(false)
                         .build()
         );
 

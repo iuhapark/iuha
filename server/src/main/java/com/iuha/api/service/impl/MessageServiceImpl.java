@@ -35,8 +35,12 @@ public class MessageServiceImpl implements MessageService {
         Message message = Message.builder()
                 .chatRoom(chatRoom)
                 .sender(sender)
+                .receiver(dto.getReceiver())
                 .message(dto.getMessage())
                 .type(Message.MessageType.TALK)
+                .timestamp(dto.getTimestamp())
+                .receiver(dto.getReceiver())
+                .isRead(false)
                 .build();
 
         return save(message);

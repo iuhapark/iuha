@@ -20,6 +20,7 @@ import React, { useEffect, useMemo, useState } from "react";
 import { DrawerIcon, EditDocumentIcon } from "../icons/icons";
 import { SearchLinearIcon } from "../icons/linear/search";
 import DropdownAvatar from "../avatar/dropdown";
+import { useRouter } from "next/navigation";
 
 export const ListboxWrapper = ({ children }: { children: React.ReactNode }) => (
   <div className='listbox'>{children}</div>
@@ -42,6 +43,7 @@ const RoomList = ({
   const myId = user?.id;
   const [searchQuery, setSearchQuery] = useState('');
   const [commandKey, setCommandKey] = useState<'ctrl' | 'command'>('command');
+  const router = useRouter();
 
   useEffect(() => {
     if (loading || !user?.id) return;
@@ -122,7 +124,14 @@ const RoomList = ({
       <div className='flex-1 overflow-auto'>
         <Listbox aria-label='Chats'>
           {filteredChatrooms.map(room => (
-            <ListboxItem key={room.id} onClick={() => onSelect(room)}>
+            <ListboxItem key={room.id}
+            // querystring 방식
+            //   onClick={() => {
+            //   router.push(`/chat/${room.id}`);
+            //   onClose();
+            // }}
+              onClick={() => onSelect(room)}
+              >
               <Skeleton className='rounded-full' isLoaded={!!room.participants}>
                 {room.participants
                   .filter((user: User) => user.id !== myId)
