@@ -1,7 +1,7 @@
 services:
   mysql:
     container_name: mysql-container
-    image: mysql:latest
+    image: mysql:mysql:9.3.0
     volumes:
       - ~/docker/mysql/iuha/etc/mysql/conf.d:/etc/mysql/conf.d:ro
       - ~/docker/mysql/iuha/var/lib/mysql:/var/lib/mysql
@@ -23,6 +23,6 @@ services:
       - "name=redis"
       - "mode=standalone"
     volumes:
-      - ./data/redis:/data
+      - ./data/redis:/dat
     ports:
       - "6379:6379"
